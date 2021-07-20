@@ -11,6 +11,13 @@ largely independent, and can be used individually.
 #![cfg_attr(debug_assertions, warn(missing_docs))]
 #![cfg_attr(not(debug_assertions), deny(missing_docs))]
 
+#![cfg_attr(all(feature = "mesalock_sgx", not(target_env = "sgx")), no_std)]
+#![cfg_attr(all(target_env = "sgx", target_vendor = "mesalock"), feature(rustc_private))]
+
+#[cfg(all(feature = "mesalock_sgx", not(target_env = "sgx")))]
+#[macro_use]
+extern crate sgx_tstd as std;
+
 #[cfg(feature = "alloc")]
 extern crate alloc;
 

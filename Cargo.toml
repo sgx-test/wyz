@@ -30,8 +30,12 @@ repository = "https://github.com/myrrlyn/wyz"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+sgx_tstd = { rev = "v1.1.3", git = "https://github.com/apache/teaclave-sgx-sdk.git", optional = true }
 
 [features]
 alloc = []
 default = ["std"]
 std = ["alloc"]
+mesalock_sgx = [
+    "sgx_tstd",
+]
