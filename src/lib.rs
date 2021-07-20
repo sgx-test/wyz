@@ -20,12 +20,6 @@ extern crate sgx_tstd as std;
 
 use std::prelude::v1::*;
 
-#[cfg(feature = "alloc")]
-extern crate alloc;
-
-#[cfg(feature = "std")]
-extern crate std;
-
 pub mod conv;
 pub mod fmt;
 pub mod pipe;
