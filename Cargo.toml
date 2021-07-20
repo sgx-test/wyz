@@ -36,10 +36,12 @@ repository = "https://github.com/myrrlyn/wyz"
 [dependencies.once_cell]
 version = "1"
 optional = true
+default_features = false
 
 [dependencies.typemap]
 version = "0.3"
 optional = true
+default_features = false
 
 [features]
 alloc = []
